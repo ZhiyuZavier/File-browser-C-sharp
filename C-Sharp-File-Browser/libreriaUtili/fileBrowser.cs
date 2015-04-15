@@ -11,8 +11,8 @@ namespace libreriaUtili
 {
     public partial class fileBrowser : UserControl
     {
-        private System.Collections.Specialized.StringCollection folderCol;
-        private CreatFolderController theCreatFolderController;
+        public System.Collections.Specialized.StringCollection folderCol;
+        public CreatFolderController theCreatFolderController;
 
         public string _ROOT = "";
 
@@ -185,20 +185,21 @@ namespace libreriaUtili
             }
         }
 
-        private void btn_nuova_cartella_Click(object sender, EventArgs e)
+        private void btnNewFolder_Click(object sender, EventArgs e)
         {
-            inputDialog i = new inputDialog("Nuova cartella", "");
+            inputDialog i = new inputDialog("new folder", "");
             if (DialogResult.OK == i.ShowDialog())
             {
                 //Code folder creation
                 try
                 {
-                    Directory.CreateDirectory(folderCol[folderCol.Count - 1] + @"\" + i.inputText);
+                    //Directory.CreateDirectory(folderCol[folderCol.Count - 1] + @"\" + i.inputText);
+                    theCreatFolderController.creatFolder(folderCol[folderCol.Count - 1] + @"\" + i.inputText);
                     PaintListView(folderCol[folderCol.Count - 1]);
                 }
                 catch (Exception ex1)
                 {
-                    MessageBox.Show("Errore: " + ex1.Message);
+                    MessageBox.Show("Error: " + ex1.Message);
                 }
             }
         }

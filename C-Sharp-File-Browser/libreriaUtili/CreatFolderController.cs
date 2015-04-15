@@ -6,10 +6,10 @@ using System.IO;
 
 namespace libreriaUtili
 {
-    class CreatFolderController
+    public class CreatFolderController
     {
-        fileBrowser theBoundary;
-        Path thePath;        
+        public fileBrowser theBoundary;
+        public Path thePath;        
 
         public CreatFolderController(fileBrowser newBoundary)
         {
@@ -40,6 +40,11 @@ namespace libreriaUtili
         {
             thePath.setRoot(root);
             return thePath.getFiles();
+        }
+
+        public void creatFolder(string path)
+        {
+            Directory.CreateDirectory(path);
         }
     }
 }

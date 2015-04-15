@@ -138,7 +138,7 @@
             this.btnNewFolder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNewFolder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNewFolder.UseVisualStyleBackColor = true;
-            this.btnNewFolder.Click += new System.EventHandler(this.btn_nuova_cartella_Click);
+            this.btnNewFolder.Click += new System.EventHandler(this.btnNewFolder_Click);
             // 
             // btn_indietro
             // 

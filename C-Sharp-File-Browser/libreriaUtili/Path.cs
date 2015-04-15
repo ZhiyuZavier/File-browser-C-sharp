@@ -6,12 +6,12 @@ using System.IO;
 
 namespace libreriaUtili
 {
-    class Path
+    public class Path
     {
-        DirectoryInfo dir;
-        DirectoryInfo[] dirs;
-        FileInfo[] files;
-        string root;
+        public DirectoryInfo dir;
+        public DirectoryInfo[] dirs;
+        public FileInfo[] files;
+        public string root;
 
         //public Path(string root)
         //{
