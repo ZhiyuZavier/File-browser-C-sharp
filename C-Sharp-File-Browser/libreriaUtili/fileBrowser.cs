@@ -12,6 +12,7 @@ namespace libreriaUtili
     public partial class fileBrowser : UserControl
     {
         private System.Collections.Specialized.StringCollection folderCol;
+        private CreatFolderController theCreatFolderController;
 
         public string _ROOT = "";
 
@@ -19,6 +20,8 @@ namespace libreriaUtili
         {
             InitializeComponent();
             folderCol = new System.Collections.Specialized.StringCollection();
+            theCreatFolderController = new CreatFolderController(this);
+
         }
 
         private void fileBrowser_Load(object sender, EventArgs e)
@@ -131,10 +134,10 @@ namespace libreriaUtili
                 FileInfo fi = new FileInfo(filename);
                 lbl_info_file.Text = "File: " + fi.Name + " | Dimensione: " + ToByteString(fi.Length);
             }
-            btn_sposta_su.Enabled = true;
-            btn_rinomina.Enabled = true;
-            if (File.Exists(filename) || Directory.Exists(filename)) btn_elimina.Enabled = true;
-            else btn_elimina.Enabled = false;
+            btnMoveUp.Enabled = true;
+            btnRename.Enabled = true;
+            if (File.Exists(filename) || Directory.Exists(filename)) btnDelete.Enabled = true;
+            else btnDelete.Enabled = false;
         }
 
         private void listViewFilesAndFolders_ItemActivate(object sender, EventArgs e)
@@ -187,7 +190,7 @@ namespace libreriaUtili
             inputDialog i = new inputDialog("Nuova cartella", "");
             if (DialogResult.OK == i.ShowDialog())
             {
-                //Codice di creazione della cartella
+                //Code folder creation
                 try
                 {
                     Directory.CreateDirectory(folderCol[folderCol.Count - 1] + @"\" + i.inputText);
@@ -227,20 +230,23 @@ namespace libreriaUtili
         {
             try
             {
-                btn_nuova_cartella.Enabled = true;
-                btn_elimina.Enabled = false;
-                btn_aggiorna.Enabled = true;
-                btn_sposta_su.Enabled = false;
-                btn_rinomina.Enabled = false;
+                btnNewFolder.Enabled = true;
+                btnDelete.Enabled = false;
+                btnRefresh.Enabled = true;
+                btnMoveUp.Enabled = false;
+                btnRename.Enabled = false;
 
                 ListViewItem lvi;
                 ListViewItem.ListViewSubItem lvsi;
 
                 if (root.CompareTo("") == 0)
                     return;
-                DirectoryInfo dir = new DirectoryInfo(root);
-                DirectoryInfo[] dirs = dir.GetDirectories();
-                FileInfo[] files = dir.GetFiles();
+                //DirectoryInfo dir = new DirectoryInfo(root);
+                //DirectoryInfo[] dirs = dir.GetDirectories();
+                //FileInfo[] files = dir.GetFiles();
+                DirectoryInfo dir = theCreatFolderController.getDirectory(root);
+                DirectoryInfo[] dirs = theCreatFolderController.getSubDirectories(root);
+                FileInfo[] files = theCreatFolderController.getFiles(root);
 
                 this.listViewFilesAndFolders.Items.Clear();
                 this.labelCurrentPath.Text = root;
@@ -250,7 +256,7 @@ namespace libreriaUtili
                 {
                     lvi = new ListViewItem();
                     lvi.Text = di.Name;
-                    if (!lvi.Text.Equals("cestino"))
+                    if (!lvi.Text.Equals("bin"))
                     {
                         lvi.Tag = di.FullName;
                         lvi.ImageIndex = 1;

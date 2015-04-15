@@ -22,3 +22,11 @@ C:\Users\OEM\Desktop\File Browser-Zhiyu Lei\C-Sharp-File-Browser\testLibreria\ob
 C:\Users\OEM\Desktop\File Browser-Zhiyu Lei\C-Sharp-File-Browser\testLibreria\obj\Release\testLibreria.pdb
 C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\testLibreria\obj\Release\testLibreria.exe
 C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\testLibreria\obj\Release\testLibreria.pdb
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\testLibreria\bin\Release\testLibreria.exe
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\testLibreria\bin\Release\testLibreria.pdb
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\testLibreria\bin\Release\libreriaUtili.dll
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\testLibreria\bin\Release\libreriaUtili.pdb
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\testLibreria\obj\Release\testLibreria.csprojResolveAssemblyReference.cache
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\testLibreria\obj\Release\testLibreria.Form1.resources
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\testLibreria\obj\Release\testLibreria.Properties.Resources.resources
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\testLibreria\obj\Release\testLibreria.csproj.GenerateResource.Cache

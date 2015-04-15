@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fileBrowser));
-            this.btn_sposta_su = new System.Windows.Forms.Button();
-            this.listaImmagini = new System.Windows.Forms.ImageList(this.components);
-            this.btn_rinomina = new System.Windows.Forms.Button();
-            this.btn_aggiorna = new System.Windows.Forms.Button();
-            this.btn_elimina = new System.Windows.Forms.Button();
-            this.btn_nuova_cartella = new System.Windows.Forms.Button();
+            this.btnMoveUp = new System.Windows.Forms.Button();
+            this.listImages = new System.Windows.Forms.ImageList(this.components);
+            this.btnRename = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnNewFolder = new System.Windows.Forms.Button();
             this.btn_indietro = new System.Windows.Forms.Button();
             this.labelCurrentPath = new System.Windows.Forms.Label();
             this.listViewFilesAndFolders = new System.Windows.Forms.ListView();
@@ -44,107 +44,107 @@
             this.lbl_info_file = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btn_sposta_su
+            // btnMoveUp
             // 
-            this.btn_sposta_su.Enabled = false;
-            this.btn_sposta_su.ImageIndex = 5;
-            this.btn_sposta_su.ImageList = this.listaImmagini;
-            this.btn_sposta_su.Location = new System.Drawing.Point(489, 338);
-            this.btn_sposta_su.Name = "btn_sposta_su";
-            this.btn_sposta_su.Size = new System.Drawing.Size(111, 32);
-            this.btn_sposta_su.TabIndex = 20;
-            this.btn_sposta_su.Text = "Sposta su";
-            this.btn_sposta_su.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_sposta_su.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_sposta_su.UseVisualStyleBackColor = true;
-            this.btn_sposta_su.Click += new System.EventHandler(this.btn_sposta_su_Click);
+            this.btnMoveUp.Enabled = false;
+            this.btnMoveUp.ImageIndex = 5;
+            this.btnMoveUp.ImageList = this.listImages;
+            this.btnMoveUp.Location = new System.Drawing.Point(489, 366);
+            this.btnMoveUp.Name = "btnMoveUp";
+            this.btnMoveUp.Size = new System.Drawing.Size(111, 35);
+            this.btnMoveUp.TabIndex = 20;
+            this.btnMoveUp.Text = "Move Up";
+            this.btnMoveUp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMoveUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMoveUp.UseVisualStyleBackColor = true;
+            this.btnMoveUp.Click += new System.EventHandler(this.btn_sposta_su_Click);
             // 
-            // listaImmagini
+            // listImages
             // 
-            this.listaImmagini.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("listaImmagini.ImageStream")));
-            this.listaImmagini.TransparentColor = System.Drawing.Color.Transparent;
-            this.listaImmagini.Images.SetKeyName(0, "file.png");
-            this.listaImmagini.Images.SetKeyName(1, "folder2.png");
-            this.listaImmagini.Images.SetKeyName(2, "delete.png");
-            this.listaImmagini.Images.SetKeyName(3, "refresh.png");
-            this.listaImmagini.Images.SetKeyName(4, "rename.png");
-            this.listaImmagini.Images.SetKeyName(5, "up.png");
-            this.listaImmagini.Images.SetKeyName(6, "zip.png");
-            this.listaImmagini.Images.SetKeyName(7, "doc.png");
-            this.listaImmagini.Images.SetKeyName(8, "gif.png");
-            this.listaImmagini.Images.SetKeyName(9, "jpg.png");
-            this.listaImmagini.Images.SetKeyName(10, "pdf.gif");
-            this.listaImmagini.Images.SetKeyName(11, "ppt.png");
-            this.listaImmagini.Images.SetKeyName(12, "xls.png");
-            this.listaImmagini.Images.SetKeyName(13, "txt.png");
-            this.listaImmagini.Images.SetKeyName(14, "avi.png");
-            this.listaImmagini.Images.SetKeyName(15, "mp3.png");
-            this.listaImmagini.Images.SetKeyName(16, "png.png");
+            this.listImages.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("listImages.ImageStream")));
+            this.listImages.TransparentColor = System.Drawing.Color.Transparent;
+            this.listImages.Images.SetKeyName(0, "file.png");
+            this.listImages.Images.SetKeyName(1, "folder2.png");
+            this.listImages.Images.SetKeyName(2, "delete.png");
+            this.listImages.Images.SetKeyName(3, "refresh.png");
+            this.listImages.Images.SetKeyName(4, "rename.png");
+            this.listImages.Images.SetKeyName(5, "up.png");
+            this.listImages.Images.SetKeyName(6, "zip.png");
+            this.listImages.Images.SetKeyName(7, "doc.png");
+            this.listImages.Images.SetKeyName(8, "gif.png");
+            this.listImages.Images.SetKeyName(9, "jpg.png");
+            this.listImages.Images.SetKeyName(10, "pdf.gif");
+            this.listImages.Images.SetKeyName(11, "ppt.png");
+            this.listImages.Images.SetKeyName(12, "xls.png");
+            this.listImages.Images.SetKeyName(13, "txt.png");
+            this.listImages.Images.SetKeyName(14, "avi.png");
+            this.listImages.Images.SetKeyName(15, "mp3.png");
+            this.listImages.Images.SetKeyName(16, "png.png");
             // 
-            // btn_rinomina
+            // btnRename
             // 
-            this.btn_rinomina.Enabled = false;
-            this.btn_rinomina.ImageIndex = 4;
-            this.btn_rinomina.ImageList = this.listaImmagini;
-            this.btn_rinomina.Location = new System.Drawing.Point(372, 338);
-            this.btn_rinomina.Name = "btn_rinomina";
-            this.btn_rinomina.Size = new System.Drawing.Size(111, 32);
-            this.btn_rinomina.TabIndex = 19;
-            this.btn_rinomina.Text = "Rinomina";
-            this.btn_rinomina.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_rinomina.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_rinomina.UseVisualStyleBackColor = true;
-            this.btn_rinomina.Click += new System.EventHandler(this.btn_rinomina_Click);
+            this.btnRename.Enabled = false;
+            this.btnRename.ImageIndex = 4;
+            this.btnRename.ImageList = this.listImages;
+            this.btnRename.Location = new System.Drawing.Point(372, 366);
+            this.btnRename.Name = "btnRename";
+            this.btnRename.Size = new System.Drawing.Size(111, 35);
+            this.btnRename.TabIndex = 19;
+            this.btnRename.Text = "Rename";
+            this.btnRename.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRename.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRename.UseVisualStyleBackColor = true;
+            this.btnRename.Click += new System.EventHandler(this.btn_rinomina_Click);
             // 
-            // btn_aggiorna
+            // btnRefresh
             // 
-            this.btn_aggiorna.Enabled = false;
-            this.btn_aggiorna.ImageIndex = 3;
-            this.btn_aggiorna.ImageList = this.listaImmagini;
-            this.btn_aggiorna.Location = new System.Drawing.Point(255, 338);
-            this.btn_aggiorna.Name = "btn_aggiorna";
-            this.btn_aggiorna.Size = new System.Drawing.Size(111, 32);
-            this.btn_aggiorna.TabIndex = 18;
-            this.btn_aggiorna.Text = "Aggiorna";
-            this.btn_aggiorna.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_aggiorna.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_aggiorna.UseVisualStyleBackColor = true;
-            this.btn_aggiorna.Click += new System.EventHandler(this.btn_aggiorna_Click);
+            this.btnRefresh.Enabled = false;
+            this.btnRefresh.ImageIndex = 3;
+            this.btnRefresh.ImageList = this.listImages;
+            this.btnRefresh.Location = new System.Drawing.Point(255, 366);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(111, 35);
+            this.btnRefresh.TabIndex = 18;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btn_aggiorna_Click);
             // 
-            // btn_elimina
+            // btnDelete
             // 
-            this.btn_elimina.Enabled = false;
-            this.btn_elimina.ImageIndex = 2;
-            this.btn_elimina.ImageList = this.listaImmagini;
-            this.btn_elimina.Location = new System.Drawing.Point(138, 338);
-            this.btn_elimina.Name = "btn_elimina";
-            this.btn_elimina.Size = new System.Drawing.Size(111, 32);
-            this.btn_elimina.TabIndex = 17;
-            this.btn_elimina.Text = "Elimina";
-            this.btn_elimina.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_elimina.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_elimina.UseVisualStyleBackColor = true;
-            this.btn_elimina.Click += new System.EventHandler(this.btn_elimina_Click);
+            this.btnDelete.Enabled = false;
+            this.btnDelete.ImageIndex = 2;
+            this.btnDelete.ImageList = this.listImages;
+            this.btnDelete.Location = new System.Drawing.Point(138, 366);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(111, 35);
+            this.btnDelete.TabIndex = 17;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btn_elimina_Click);
             // 
-            // btn_nuova_cartella
+            // btnNewFolder
             // 
-            this.btn_nuova_cartella.ImageIndex = 1;
-            this.btn_nuova_cartella.ImageList = this.listaImmagini;
-            this.btn_nuova_cartella.Location = new System.Drawing.Point(21, 338);
-            this.btn_nuova_cartella.Name = "btn_nuova_cartella";
-            this.btn_nuova_cartella.Size = new System.Drawing.Size(111, 32);
-            this.btn_nuova_cartella.TabIndex = 16;
-            this.btn_nuova_cartella.Text = "Crea Cartella";
-            this.btn_nuova_cartella.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_nuova_cartella.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_nuova_cartella.UseVisualStyleBackColor = true;
-            this.btn_nuova_cartella.Click += new System.EventHandler(this.btn_nuova_cartella_Click);
+            this.btnNewFolder.ImageIndex = 1;
+            this.btnNewFolder.ImageList = this.listImages;
+            this.btnNewFolder.Location = new System.Drawing.Point(21, 366);
+            this.btnNewFolder.Name = "btnNewFolder";
+            this.btnNewFolder.Size = new System.Drawing.Size(111, 35);
+            this.btnNewFolder.TabIndex = 16;
+            this.btnNewFolder.Text = "Create Folder";
+            this.btnNewFolder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNewFolder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNewFolder.UseVisualStyleBackColor = true;
+            this.btnNewFolder.Click += new System.EventHandler(this.btn_nuova_cartella_Click);
             // 
             // btn_indietro
             // 
-            this.btn_indietro.Location = new System.Drawing.Point(21, 6);
+            this.btn_indietro.Location = new System.Drawing.Point(21, 7);
             this.btn_indietro.Name = "btn_indietro";
-            this.btn_indietro.Size = new System.Drawing.Size(52, 22);
+            this.btn_indietro.Size = new System.Drawing.Size(52, 24);
             this.btn_indietro.TabIndex = 15;
             this.btn_indietro.Text = "<<";
             this.btn_indietro.UseVisualStyleBackColor = true;
@@ -153,11 +153,11 @@
             // labelCurrentPath
             // 
             this.labelCurrentPath.AutoSize = true;
-            this.labelCurrentPath.Location = new System.Drawing.Point(79, 12);
+            this.labelCurrentPath.Location = new System.Drawing.Point(79, 13);
             this.labelCurrentPath.Name = "labelCurrentPath";
-            this.labelCurrentPath.Size = new System.Drawing.Size(53, 12);
+            this.labelCurrentPath.Size = new System.Drawing.Size(31, 13);
             this.labelCurrentPath.TabIndex = 14;
-            this.labelCurrentPath.Text = "percorso";
+            this.labelCurrentPath.Text = "route";
             // 
             // listViewFilesAndFolders
             // 
@@ -169,13 +169,13 @@
             this.listViewFilesAndFolders.FullRowSelect = true;
             this.listViewFilesAndFolders.GridLines = true;
             this.listViewFilesAndFolders.HideSelection = false;
-            this.listViewFilesAndFolders.LargeImageList = this.listaImmagini;
-            this.listViewFilesAndFolders.Location = new System.Drawing.Point(21, 34);
+            this.listViewFilesAndFolders.LargeImageList = this.listImages;
+            this.listViewFilesAndFolders.Location = new System.Drawing.Point(21, 37);
             this.listViewFilesAndFolders.MultiSelect = false;
             this.listViewFilesAndFolders.Name = "listViewFilesAndFolders";
             this.listViewFilesAndFolders.ShowGroups = false;
-            this.listViewFilesAndFolders.Size = new System.Drawing.Size(635, 296);
-            this.listViewFilesAndFolders.SmallImageList = this.listaImmagini;
+            this.listViewFilesAndFolders.Size = new System.Drawing.Size(635, 320);
+            this.listViewFilesAndFolders.SmallImageList = this.listImages;
             this.listViewFilesAndFolders.TabIndex = 13;
             this.listViewFilesAndFolders.UseCompatibleStateImageBehavior = false;
             this.listViewFilesAndFolders.View = System.Windows.Forms.View.Details;
@@ -187,36 +187,36 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Nome File";
+            this.columnHeader1.Text = "File Name";
             this.columnHeader1.Width = 440;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Ultima Modifica";
+            this.columnHeader2.Text = "Last Modified";
             this.columnHeader2.Width = 150;
             // 
             // lbl_info_file
             // 
-            this.lbl_info_file.Location = new System.Drawing.Point(25, 383);
+            this.lbl_info_file.Location = new System.Drawing.Point(25, 415);
             this.lbl_info_file.Name = "lbl_info_file";
-            this.lbl_info_file.Size = new System.Drawing.Size(631, 18);
+            this.lbl_info_file.Size = new System.Drawing.Size(631, 20);
             this.lbl_info_file.TabIndex = 21;
             // 
             // fileBrowser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lbl_info_file);
-            this.Controls.Add(this.btn_sposta_su);
-            this.Controls.Add(this.btn_rinomina);
-            this.Controls.Add(this.btn_aggiorna);
-            this.Controls.Add(this.btn_elimina);
-            this.Controls.Add(this.btn_nuova_cartella);
+            this.Controls.Add(this.btnMoveUp);
+            this.Controls.Add(this.btnRename);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnNewFolder);
             this.Controls.Add(this.btn_indietro);
             this.Controls.Add(this.labelCurrentPath);
             this.Controls.Add(this.listViewFilesAndFolders);
             this.Name = "fileBrowser";
-            this.Size = new System.Drawing.Size(680, 410);
+            this.Size = new System.Drawing.Size(680, 444);
             this.Load += new System.EventHandler(this.fileBrowser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -225,17 +225,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_sposta_su;
-        private System.Windows.Forms.Button btn_rinomina;
-        private System.Windows.Forms.Button btn_aggiorna;
-        private System.Windows.Forms.Button btn_elimina;
-        private System.Windows.Forms.Button btn_nuova_cartella;
+        private System.Windows.Forms.Button btnMoveUp;
+        private System.Windows.Forms.Button btnRename;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnNewFolder;
         private System.Windows.Forms.Button btn_indietro;
         private System.Windows.Forms.Label labelCurrentPath;
         private System.Windows.Forms.ListView listViewFilesAndFolders;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Label lbl_info_file;
-        private System.Windows.Forms.ImageList listaImmagini;
+        private System.Windows.Forms.ImageList listImages;
     }
 }

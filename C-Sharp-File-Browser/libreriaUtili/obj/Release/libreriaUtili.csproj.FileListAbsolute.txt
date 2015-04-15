@@ -12,3 +12,10 @@ C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\lib
 C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\obj\Release\libreriaUtili.csproj.GenerateResource.Cache
 C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\obj\Release\libreriaUtili.dll
 C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\obj\Release\libreriaUtili.pdb
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\libreriaUtili\bin\Release\libreriaUtili.dll
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\libreriaUtili\bin\Release\libreriaUtili.pdb
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\libreriaUtili\obj\Release\libreriaUtili.fileBrowser.resources
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\libreriaUtili\obj\Release\libreriaUtili.inputDialog.resources
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\libreriaUtili\obj\Release\libreriaUtili.csproj.GenerateResource.Cache
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\libreriaUtili\obj\Release\libreriaUtili.dll
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\libreriaUtili\obj\Release\libreriaUtili.pdb
