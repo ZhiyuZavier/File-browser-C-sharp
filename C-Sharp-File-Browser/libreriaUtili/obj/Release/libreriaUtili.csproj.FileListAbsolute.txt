@@ -1,0 +1,14 @@
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\bin\Release\libreriaUtili.dll
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\bin\Release\libreriaUtili.pdb
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\obj\Release\libreriaUtili.fileBrowser.resources
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\obj\Release\libreriaUtili.inputDialog.resources
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\obj\Release\libreriaUtili.csproj.GenerateResource.Cache
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\obj\Release\libreriaUtili.dll
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\obj\Release\libreriaUtili.pdb
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\bin\Release\libreriaUtili.dll
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\bin\Release\libreriaUtili.pdb
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\obj\Release\libreriaUtili.fileBrowser.resources
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\obj\Release\libreriaUtili.inputDialog.resources
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\obj\Release\libreriaUtili.csproj.GenerateResource.Cache
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\obj\Release\libreriaUtili.dll
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\libreriaUtili\obj\Release\libreriaUtili.pdb

@@ -1,0 +1,24 @@
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\obj\Release\testLibreria.exe
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\obj\Release\testLibreria.pdb
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\bin\Release\testLibreria.exe
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\bin\Release\testLibreria.pdb
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\bin\Release\libreriaUtili.dll
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\bin\Release\libreriaUtili.pdb
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\obj\Release\testLibreria.csprojResolveAssemblyReference.cache
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\obj\Release\testLibreria.Form1.resources
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\obj\Release\testLibreria.Properties.Resources.resources
+C:\Users\治宇\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\obj\Release\testLibreria.csproj.GenerateResource.Cache
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\obj\Release\testLibreria.exe
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\obj\Release\testLibreria.pdb
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\bin\Release\testLibreria.exe
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\bin\Release\testLibreria.pdb
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\bin\Release\libreriaUtili.dll
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\bin\Release\libreriaUtili.pdb
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\obj\Release\testLibreria.csprojResolveAssemblyReference.cache
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\obj\Release\testLibreria.Form1.resources
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\obj\Release\testLibreria.Properties.Resources.resources
+C:\Users\OEM\Desktop\C-Sharp-File-Browser-master\C-Sharp-File-Browser-master\testLibreria\obj\Release\testLibreria.csproj.GenerateResource.Cache
+C:\Users\OEM\Desktop\File Browser-Zhiyu Lei\C-Sharp-File-Browser\testLibreria\obj\Release\testLibreria.exe
+C:\Users\OEM\Desktop\File Browser-Zhiyu Lei\C-Sharp-File-Browser\testLibreria\obj\Release\testLibreria.pdb
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\testLibreria\obj\Release\testLibreria.exe
+C:\Users\OEM\Desktop\File_Browser-Zhiyu_Lei\C-Sharp-File-Browser\testLibreria\obj\Release\testLibreria.pdb

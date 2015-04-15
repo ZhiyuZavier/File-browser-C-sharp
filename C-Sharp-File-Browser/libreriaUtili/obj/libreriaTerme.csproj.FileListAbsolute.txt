@@ -1,0 +1,16 @@
+C:\Documents and Settings\Administrator\Documenti\Visual Studio 2005\Projects\libreriaTerme\libreriaTerme\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Documenti\Visual Studio 2005\Projects\libreriaTerme\libreriaTerme\obj\Release\libreriaTerme.fileBrowser.resources
+C:\Documents and Settings\Administrator\Documenti\Visual Studio 2005\Projects\libreriaTerme\libreriaTerme\obj\Release\libreriaTerme.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\Documenti\Visual Studio 2005\Projects\libreriaTerme\libreriaTerme\bin\Release\libreriaTerme.dll
+C:\Documents and Settings\Administrator\Documenti\Visual Studio 2005\Projects\libreriaTerme\libreriaTerme\bin\Release\libreriaTerme.pdb
+C:\Documents and Settings\Administrator\Documenti\Visual Studio 2005\Projects\libreriaTerme\libreriaTerme\obj\Release\libreriaTerme.dll
+C:\Documents and Settings\Administrator\Documenti\Visual Studio 2005\Projects\libreriaTerme\libreriaTerme\obj\Release\libreriaTerme.pdb
+C:\Documents and Settings\Administrator\Documenti\Visual Studio 2005\Projects\libreriaTerme\libreriaTerme\obj\Release\libreriaTerme.inputDialog.resources
+C:\Documents and Settings\Administrator\Documenti\Visual Studio 2005\Projects\libreriaTerme\libreriaTerme\bin\Debug\libreriaTerme.dll
+C:\Documents and Settings\Administrator\Documenti\Visual Studio 2005\Projects\libreriaTerme\libreriaTerme\bin\Debug\libreriaTerme.pdb
+C:\Documents and Settings\Administrator\Documenti\Visual Studio 2005\Projects\libreriaTerme\libreriaTerme\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Documenti\Visual Studio 2005\Projects\libreriaTerme\libreriaTerme\obj\Debug\libreriaTerme.fileBrowser.resources
+C:\Documents and Settings\Administrator\Documenti\Visual Studio 2005\Projects\libreriaTerme\libreriaTerme\obj\Debug\libreriaTerme.inputDialog.resources
+C:\Documents and Settings\Administrator\Documenti\Visual Studio 2005\Projects\libreriaTerme\libreriaTerme\obj\Debug\libreriaTerme.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\Documenti\Visual Studio 2005\Projects\libreriaTerme\libreriaTerme\obj\Debug\libreriaTerme.dll
+C:\Documents and Settings\Administrator\Documenti\Visual Studio 2005\Projects\libreriaTerme\libreriaTerme\obj\Debug\libreriaTerme.pdb
