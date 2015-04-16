@@ -140,8 +140,9 @@ namespace libreriaUtili
             if (File.Exists(filename))
             {
                 //Scrivo le informazioni del file nella label apposita
+                //Write the file information in the appropriate label
                 FileInfo fi = new FileInfo(filename);
-                lbl_info_file.Text = "File: " + fi.Name + " | Dimensione: " + theDragToMoveController.ToByteString(fi.Length);
+                lbl_info_file.Text = "File: " + fi.Name + " | Size: " + theDragToMoveController.ToByteString(fi.Length);
             }
             btnMoveUp.Enabled = true;
             btnRename.Enabled = true;
@@ -178,7 +179,7 @@ namespace libreriaUtili
             {
                 string filename = listViewFilesAndFolders.SelectedItems[0].Tag.ToString();
                 //FileInfo fi = new FileInfo(filename);
-                if (DialogResult.Yes == MessageBox.Show("Elimino DEFINITIVAMENTE il file selezionato?", "Eliminazione", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                if (DialogResult.Yes == MessageBox.Show("PERMANENTLY delete the selected file?", "Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
                     try
                     {
@@ -329,21 +330,23 @@ namespace libreriaUtili
 
         private void btnMoveUp_Click(object sender, EventArgs e)
         {
-            if ((listViewFilesAndFolders.SelectedItems.Count == 1) && (folderCol.Count > 1))
-            {
-                string filename = listViewFilesAndFolders.SelectedItems[0].Tag.ToString();
-                FileInfo fi = new FileInfo(filename);
-                try
-                {
-                    if (File.Exists(filename)) File.Move(filename, folderCol[folderCol.Count - 2] + @"\" + fi.Name);
-                    else if (Directory.Exists(filename)) Directory.Move(filename, folderCol[folderCol.Count - 2] + @"\" + fi.Name);
-                    PaintListView(folderCol[folderCol.Count - 1]);
-                }
-                catch (IOException ioe)
-                {
-                    MessageBox.Show("Errore: " + ioe.Message);
-                }
-            }
+            //if ((listViewFilesAndFolders.SelectedItems.Count == 1) && (folderCol.Count > 1))
+            //{
+            //    string filename = listViewFilesAndFolders.SelectedItems[0].Tag.ToString();
+            //    FileInfo fi = new FileInfo(filename);
+            //    try
+            //    {
+            //        if (File.Exists(filename)) File.Move(filename, folderCol[folderCol.Count - 2] + @"\" + fi.Name);
+            //        else if (Directory.Exists(filename)) Directory.Move(filename, folderCol[folderCol.Count - 2] + @"\" + fi.Name);
+            //        PaintListView(folderCol[folderCol.Count - 1]);
+            //    }
+            //    catch (IOException ioe)
+            //    {
+            //        MessageBox.Show("Error: " + ioe.Message);
+            //    }
+            //}
+            theFileBrowserController.moveUp(listViewFilesAndFolders, folderCol);
+            PaintListView(folderCol[folderCol.Count - 1]);
         }
 
     }
