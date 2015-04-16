@@ -36,7 +36,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnNewFolder = new System.Windows.Forms.Button();
-            this.btn_indietro = new System.Windows.Forms.Button();
+            this.btnBackward = new System.Windows.Forms.Button();
             this.labelCurrentPath = new System.Windows.Forms.Label();
             this.listViewFilesAndFolders = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -57,7 +57,7 @@
             this.btnMoveUp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMoveUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMoveUp.UseVisualStyleBackColor = true;
-            this.btnMoveUp.Click += new System.EventHandler(this.btn_sposta_su_Click);
+            this.btnMoveUp.Click += new System.EventHandler(this.btnMoveUp_Click);
             // 
             // listImages
             // 
@@ -94,7 +94,7 @@
             this.btnRename.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRename.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRename.UseVisualStyleBackColor = true;
-            this.btnRename.Click += new System.EventHandler(this.btn_rinomina_Click);
+            this.btnRename.Click += new System.EventHandler(this.btnRename_Click);
             // 
             // btnRefresh
             // 
@@ -109,7 +109,7 @@
             this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btn_aggiorna_Click);
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnDelete
             // 
@@ -140,15 +140,15 @@
             this.btnNewFolder.UseVisualStyleBackColor = true;
             this.btnNewFolder.Click += new System.EventHandler(this.btnNewFolder_Click);
             // 
-            // btn_indietro
+            // btnBackward
             // 
-            this.btn_indietro.Location = new System.Drawing.Point(21, 7);
-            this.btn_indietro.Name = "btn_indietro";
-            this.btn_indietro.Size = new System.Drawing.Size(52, 24);
-            this.btn_indietro.TabIndex = 15;
-            this.btn_indietro.Text = "<<";
-            this.btn_indietro.UseVisualStyleBackColor = true;
-            this.btn_indietro.Click += new System.EventHandler(this.btn_indietro_Click);
+            this.btnBackward.Location = new System.Drawing.Point(21, 7);
+            this.btnBackward.Name = "btnBackward";
+            this.btnBackward.Size = new System.Drawing.Size(52, 24);
+            this.btnBackward.TabIndex = 15;
+            this.btnBackward.Text = "<<";
+            this.btnBackward.UseVisualStyleBackColor = true;
+            this.btnBackward.Click += new System.EventHandler(this.btnBackward_Click);
             // 
             // labelCurrentPath
             // 
@@ -212,7 +212,7 @@
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnNewFolder);
-            this.Controls.Add(this.btn_indietro);
+            this.Controls.Add(this.btnBackward);
             this.Controls.Add(this.labelCurrentPath);
             this.Controls.Add(this.listViewFilesAndFolders);
             this.Name = "fileBrowser";
@@ -230,7 +230,7 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnNewFolder;
-        private System.Windows.Forms.Button btn_indietro;
+        private System.Windows.Forms.Button btnBackward;
         private System.Windows.Forms.Label labelCurrentPath;
         private System.Windows.Forms.ListView listViewFilesAndFolders;
         private System.Windows.Forms.ColumnHeader columnHeader1;

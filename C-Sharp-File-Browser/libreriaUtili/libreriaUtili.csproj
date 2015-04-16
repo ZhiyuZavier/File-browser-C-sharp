@@ -44,6 +44,7 @@
     <Compile Include="CreatFolderController.cs" />
     <Compile Include="DeleteController.cs" />
     <Compile Include="DragToMoveController.cs" />
+    <Compile Include="FileBrowserController.cs" />
     <Compile Include="Path.cs" />
     <Compile Include="fileBrowser.cs">
       <SubType>UserControl</SubType>

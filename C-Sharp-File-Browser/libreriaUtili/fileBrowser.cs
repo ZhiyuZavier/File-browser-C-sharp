@@ -15,6 +15,7 @@ namespace libreriaUtili
         public CreatFolderController theCreatFolderController;
         public DeleteController theDeleteController;
         public DragToMoveController theDragToMoveController;
+        public FileBrowserController theFileBrowserController;
 
         public string _ROOT = "";
 
@@ -25,6 +26,7 @@ namespace libreriaUtili
             theCreatFolderController = new CreatFolderController(this);
             theDeleteController = new DeleteController(this);
             theDragToMoveController = new DragToMoveController(this);
+            theFileBrowserController = new FileBrowserController(this);
         }
 
         private void fileBrowser_Load(object sender, EventArgs e)
@@ -48,7 +50,7 @@ namespace libreriaUtili
             theDragToMoveController.dragEnter(e);
         }
 
-        private void btn_indietro_Click(object sender, EventArgs e)
+        private void btnBackward_Click(object sender, EventArgs e)
         {
             if (folderCol.Count > 1)
             {
@@ -219,27 +221,29 @@ namespace libreriaUtili
             }
         }
 
-        private void btn_rinomina_Click(object sender, EventArgs e)
+        private void btnRename_Click(object sender, EventArgs e)
         {
-            if (listViewFilesAndFolders.SelectedItems.Count == 1)
-            {
-                string filename = listViewFilesAndFolders.SelectedItems[0].Tag.ToString();
-                FileInfo fi = new FileInfo(filename);
-                inputDialog i = new inputDialog("Rinomina", fi.Name);
-                if (DialogResult.OK == i.ShowDialog())
-                {
-                    try
-                    {
-                        if (File.Exists(filename)) File.Move(filename, fi.DirectoryName + @"\" + i.inputText);
-                        else if (Directory.Exists(filename)) Directory.Move(filename, fi.DirectoryName + @"\" + i.inputText);
-                        PaintListView(folderCol[folderCol.Count - 1]);
-                    }
-                    catch (IOException ioe)
-                    {
-                        MessageBox.Show("Errore: " + ioe.Message);
-                    }
-                }
-            }
+            //if (listViewFilesAndFolders.SelectedItems.Count == 1)
+            //{
+            //    string filename = listViewFilesAndFolders.SelectedItems[0].Tag.ToString();
+            //    FileInfo fi = new FileInfo(filename);
+            //    inputDialog i = new inputDialog("Rinomina", fi.Name);
+            //    if (DialogResult.OK == i.ShowDialog())
+            //    {
+            //        try
+            //        {
+            //            if (File.Exists(filename)) File.Move(filename, fi.DirectoryName + @"\" + i.inputText);
+            //            else if (Directory.Exists(filename)) Directory.Move(filename, fi.DirectoryName + @"\" + i.inputText);
+            //            PaintListView(folderCol[folderCol.Count - 1]);
+            //        }
+            //        catch (IOException ioe)
+            //        {
+            //            MessageBox.Show("Errore: " + ioe.Message);
+            //        }
+            //    }
+            //}
+            theFileBrowserController.reName(listViewFilesAndFolders); 
+            PaintListView(folderCol[folderCol.Count - 1]);
         }
 
         private void PaintListView(string root)
@@ -318,12 +322,12 @@ namespace libreriaUtili
             }
         }
 
-        private void btn_aggiorna_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             PaintListView(folderCol[folderCol.Count - 1]);
         }
 
-        private void btn_sposta_su_Click(object sender, EventArgs e)
+        private void btnMoveUp_Click(object sender, EventArgs e)
         {
             if ((listViewFilesAndFolders.SelectedItems.Count == 1) && (folderCol.Count > 1))
             {
