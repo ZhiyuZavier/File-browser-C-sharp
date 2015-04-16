@@ -13,6 +13,8 @@ namespace libreriaUtili
     {
         public System.Collections.Specialized.StringCollection folderCol;
         public CreatFolderController theCreatFolderController;
+        public DeleteController theDeleteController;
+        public DragToMoveController theDragToMoveController;
 
         public string _ROOT = "";
 
@@ -21,7 +23,8 @@ namespace libreriaUtili
             InitializeComponent();
             folderCol = new System.Collections.Specialized.StringCollection();
             theCreatFolderController = new CreatFolderController(this);
-
+            theDeleteController = new DeleteController(this);
+            theDragToMoveController = new DragToMoveController(this);
         }
 
         private void fileBrowser_Load(object sender, EventArgs e)
@@ -32,16 +35,17 @@ namespace libreriaUtili
 
         private void listViewFilesAndFolders_DragEnter(object sender, DragEventArgs e)
         {
-            int len = e.Data.GetFormats().Length - 1;
-            int i;
-            for (i = 0; i <= len; i++)
-            {
-                if (e.Data.GetFormats()[i].Equals("System.Windows.Forms.ListView+SelectedListViewItemCollection"))
-                {
-                    //The data from the drag source is moved to the target.	
-                    e.Effect = DragDropEffects.Move;
-                }
-            }
+            //int len = e.Data.GetFormats().Length - 1;
+            //int i;
+            //for (i = 0; i <= len; i++)
+            //{
+            //    if (e.Data.GetFormats()[i].Equals("System.Windows.Forms.ListView+SelectedListViewItemCollection"))
+            //    {
+            //        //The data from the drag source is moved to the target.	
+            //        e.Effect = DragDropEffects.Move;
+            //    }
+            //}
+            theDragToMoveController.dragEnter(e);
         }
 
         private void btn_indietro_Click(object sender, EventArgs e)
@@ -60,7 +64,8 @@ namespace libreriaUtili
         private void listViewFilesAndFolders_ItemDrag(object sender, ItemDragEventArgs e)
         {
             //Begins a drag-and-drop operation in the ListView control.
-            listViewFilesAndFolders.DoDragDrop(listViewFilesAndFolders.SelectedItems, DragDropEffects.Move);
+            //listViewFilesAndFolders.DoDragDrop(listViewFilesAndFolders.SelectedItems, DragDropEffects.Move);
+            theDragToMoveController.startDrag(listViewFilesAndFolders);
         }
 
         private void listViewFilesAndFolders_DragDrop(object sender, DragEventArgs e)
@@ -163,23 +168,31 @@ namespace libreriaUtili
             }
         }
 
-        private void btn_elimina_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             if (listViewFilesAndFolders.SelectedItems.Count == 1)
             {
                 string filename = listViewFilesAndFolders.SelectedItems[0].Tag.ToString();
-                FileInfo fi = new FileInfo(filename);
+                //FileInfo fi = new FileInfo(filename);
                 if (DialogResult.Yes == MessageBox.Show("Elimino DEFINITIVAMENTE il file selezionato?", "Eliminazione", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
                     try
                     {
-                        if (File.Exists(filename)) File.Delete(filename);
-                        else if (Directory.Exists(filename)) Directory.Delete(filename);
+                        //if (File.Exists(filename)) File.Delete(filename);
+                        //else if (Directory.Exists(filename)) Directory.Delete(filename);
+                        if (theDeleteController.isFileExisted(filename))
+                        {
+                            theDeleteController.deleteFile(filename);
+                        }
+                        else if (theDeleteController.isDirectoryExisted(filename))
+                        {
+                            theDeleteController.deleteDirectory(filename);
+                        }
                         listViewFilesAndFolders.Items.Remove(listViewFilesAndFolders.SelectedItems[0]);
                     }
                     catch (IOException ioe)
                     {
-                        MessageBox.Show("Errore: " + ioe.Message);
+                        MessageBox.Show("Error: " + ioe.Message);
                     }
                 }
             }
