@@ -70,64 +70,66 @@ namespace libreriaUtili
 
         private void listViewFilesAndFolders_DragDrop(object sender, DragEventArgs e)
         {
-            //Return if the items are not selected in the ListView control.
-            if (listViewFilesAndFolders.SelectedItems.Count == 0)
-            {
-                return;
-            }
-            //Returns the location of the mouse pointer in the ListView control.
-            Point cp = listViewFilesAndFolders.PointToClient(new Point(e.X, e.Y));
-            //Obtain the item that is located at the specified location of the mouse pointer.
-            ListViewItem dragToItem = listViewFilesAndFolders.GetItemAt(cp.X, cp.Y);
-            if (dragToItem == null)
-            {
-                return;
-            }
-            //Obtain the index of the item at the mouse pointer.
-            int dragIndex = dragToItem.Index;
-            ListViewItem[] sel = new ListViewItem[listViewFilesAndFolders.SelectedItems.Count];
-            for (int i = 0; i <= listViewFilesAndFolders.SelectedItems.Count - 1; i++)
-            {
-                sel[i] = listViewFilesAndFolders.SelectedItems[i];
-            }
-            for (int i = 0; i < sel.GetLength(0); i++)
-            {
-                //Obtain the ListViewItem to be dragged to the target location.
-                ListViewItem dragItem = sel[i];
-                int itemIndex = dragIndex;
-                if (itemIndex == dragItem.Index)
-                {
-                    return;
-                }
-                if (dragItem.Index < itemIndex)
-                    itemIndex++;
-                else
-                    itemIndex = dragIndex + i;
+            ////Return if the items are not selected in the ListView control.
+            //if (listViewFilesAndFolders.SelectedItems.Count == 0)
+            //{
+            //    return;
+            //}
+            ////Returns the location of the mouse pointer in the ListView control.
+            //Point cp = listViewFilesAndFolders.PointToClient(new Point(e.X, e.Y));
+            ////Obtain the item that is located at the specified location of the mouse pointer.
+            //ListViewItem dragToItem = listViewFilesAndFolders.GetItemAt(cp.X, cp.Y);
+            //if (dragToItem == null)
+            //{
+            //    return;
+            //}
+            ////Obtain the index of the item at the mouse pointer.
+            //int dragIndex = dragToItem.Index;
+            //ListViewItem[] sel = new ListViewItem[listViewFilesAndFolders.SelectedItems.Count];
+            //for (int i = 0; i <= listViewFilesAndFolders.SelectedItems.Count - 1; i++)
+            //{
+            //    sel[i] = listViewFilesAndFolders.SelectedItems[i];
+            //}
+            //for (int i = 0; i < sel.GetLength(0); i++)
+            //{
+            //    //Obtain the ListViewItem to be dragged to the target location.
+            //    ListViewItem dragItem = sel[i];
+            //    int itemIndex = dragIndex;
+            //    if (itemIndex == dragItem.Index)
+            //    {
+            //        return;
+            //    }
+            //    if (dragItem.Index < itemIndex)
+            //        itemIndex++;
+            //    else
+            //        itemIndex = dragIndex + i;
 
-                //Sposto i files dentro la cartella specificata
-                if (Directory.Exists(labelCurrentPath.Text + "\\" + dragToItem.Text))
-                {
-                    if (File.Exists(dragItem.Tag.ToString()))
-                        File.Move(labelCurrentPath.Text + "\\" + dragItem.Text, labelCurrentPath.Text + "\\" + dragToItem.Text + "\\" + dragItem.Text);
-                    else if (Directory.Exists(dragItem.Tag.ToString()))
-                        Directory.Move(labelCurrentPath.Text + "\\" + dragItem.Text, labelCurrentPath.Text + "\\" + dragToItem.Text + "\\" + dragItem.Text);
-                    listViewFilesAndFolders.Items.Remove(dragItem);
-                }
-            }
+            //    //Sposto i files dentro la cartella specificata
+            //    //move the files into the folder specified
+            //    if (Directory.Exists(labelCurrentPath.Text + "\\" + dragToItem.Text))
+            //    {
+            //        if (File.Exists(dragItem.Tag.ToString()))
+            //            File.Move(labelCurrentPath.Text + "\\" + dragItem.Text, labelCurrentPath.Text + "\\" + dragToItem.Text + "\\" + dragItem.Text);
+            //        else if (Directory.Exists(dragItem.Tag.ToString()))
+            //            Directory.Move(labelCurrentPath.Text + "\\" + dragItem.Text, labelCurrentPath.Text + "\\" + dragToItem.Text + "\\" + dragItem.Text);
+            //        listViewFilesAndFolders.Items.Remove(dragItem);
+            //    }
+            //}
+            theDragToMoveController.startDrop(listViewFilesAndFolders, e, labelCurrentPath);
         }
 
-        public static string ToByteString(long bytes)
-        {
-            long kilobyte = 1024;
-            long megabyte = 1024 * kilobyte;
-            long gigabyte = 1024 * megabyte;
-            long terabyte = 1024 * gigabyte;
-            if (bytes > terabyte) return (bytes / terabyte).ToString("0.00 TB");
-            else if (bytes > gigabyte) return (bytes / gigabyte).ToString("0.00 GB");
-            else if (bytes > megabyte) return (bytes / megabyte).ToString("0.00 MB");
-            else if (bytes > kilobyte) return (bytes / kilobyte).ToString("0.00 KB");
-            else return bytes + " Bytes";
-        }
+        //public static string ToByteString(long bytes)
+        //{
+        //    long kilobyte = 1024;
+        //    long megabyte = 1024 * kilobyte;
+        //    long gigabyte = 1024 * megabyte;
+        //    long terabyte = 1024 * gigabyte;
+        //    if (bytes > terabyte) return (bytes / terabyte).ToString("0.00 TB");
+        //    else if (bytes > gigabyte) return (bytes / gigabyte).ToString("0.00 GB");
+        //    else if (bytes > megabyte) return (bytes / megabyte).ToString("0.00 MB");
+        //    else if (bytes > kilobyte) return (bytes / kilobyte).ToString("0.00 KB");
+        //    else return bytes + " Bytes";
+        //}
 
         private void listViewFilesAndFolders_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
@@ -137,7 +139,7 @@ namespace libreriaUtili
             {
                 //Scrivo le informazioni del file nella label apposita
                 FileInfo fi = new FileInfo(filename);
-                lbl_info_file.Text = "File: " + fi.Name + " | Dimensione: " + ToByteString(fi.Length);
+                lbl_info_file.Text = "File: " + fi.Name + " | Dimensione: " + theDragToMoveController.ToByteString(fi.Length);
             }
             btnMoveUp.Enabled = true;
             btnRename.Enabled = true;
