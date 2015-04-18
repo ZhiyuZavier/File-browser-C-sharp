@@ -45,12 +45,12 @@
     <Compile Include="DeleteController.cs" />
     <Compile Include="DragToMoveController.cs" />
     <Compile Include="FileBrowserController.cs" />
-    <Compile Include="Path.cs" />
-    <Compile Include="fileBrowser.cs">
+    <Compile Include="Folder.cs" />
+    <Compile Include="FileBrowser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="fileBrowser.Designer.cs">
-      <DependentUpon>fileBrowser.cs</DependentUpon>
+    <Compile Include="FileBrowser.Designer.cs">
+      <DependentUpon>FileBrowser.cs</DependentUpon>
     </Compile>
     <Compile Include="inputDialog.cs">
       <SubType>Form</SubType>
@@ -61,9 +61,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="fileBrowser.resx">
+    <EmbeddedResource Include="FileBrowser.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>fileBrowser.cs</DependentUpon>
+      <DependentUpon>FileBrowser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inputDialog.resx">
       <DependentUpon>inputDialog.cs</DependentUpon>

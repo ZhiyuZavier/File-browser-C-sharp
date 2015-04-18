@@ -9,7 +9,7 @@ using System.IO;
 
 namespace libreriaUtili
 {
-    public partial class fileBrowser : UserControl
+    public partial class FileBrowser : UserControl
     {
         public System.Collections.Specialized.StringCollection folderCol;
         public CreatFolderController theCreatFolderController;
@@ -19,7 +19,7 @@ namespace libreriaUtili
 
         public string _ROOT = "";
 
-        public fileBrowser()
+        public FileBrowser()
         {
             InitializeComponent();
             folderCol = new System.Collections.Specialized.StringCollection();
@@ -139,7 +139,6 @@ namespace libreriaUtili
             lbl_info_file.Text = "";
             if (File.Exists(filename))
             {
-                //Scrivo le informazioni del file nella label apposita
                 //Write the file information in the appropriate label
                 FileInfo fi = new FileInfo(filename);
                 lbl_info_file.Text = "File: " + fi.Name + " | Size: " + theDragToMoveController.ToByteString(fi.Length);

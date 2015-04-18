@@ -8,38 +8,31 @@ namespace libreriaUtili
 {
     public class CreatFolderController
     {
-        public fileBrowser theBoundary;
-        public Path thePath;        
+        public FileBrowser theBoundary;
+        public Folder theFolder;        
 
-        public CreatFolderController(fileBrowser newBoundary)
+        public CreatFolderController(FileBrowser newBoundary)
         {
             theBoundary = newBoundary;
-            thePath = new Path();       
-        }
-
-        //public void getFilePath()
-        //{
-        //    dir = theFile.getDirectory();
-        //    dirs = theFile.getSubDirectories();
-        //    files = theFile.getFiles();
-        //}
+            theFolder = new Folder();       
+        }        
 
         public DirectoryInfo getDirectory(string root)
         {
-            thePath.setRoot(root);
-            return thePath.getDirectory();
+            theFolder.setRoot(root);
+            return theFolder.getDirectory();
         }
 
         public DirectoryInfo[] getSubDirectories(string root)
         {
-            thePath.setRoot(root);
-            return thePath.getSubDirectories();
+            theFolder.setRoot(root);
+            return theFolder.getSubDirectories();
         }
 
         public FileInfo[] getFiles(string root)
         {
-            thePath.setRoot(root);
-            return thePath.getFiles();
+            theFolder.setRoot(root);
+            return theFolder.getFiles();
         }
 
         public void creatFolder(string path)

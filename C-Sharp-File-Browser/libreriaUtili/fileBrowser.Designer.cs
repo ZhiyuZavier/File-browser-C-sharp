@@ -1,6 +1,6 @@
 ﻿namespace libreriaUtili
 {
-    partial class fileBrowser
+    partial class FileBrowser
     {
         /// <summary> 
         /// Variabile di progettazione necessaria.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fileBrowser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileBrowser));
             this.btnMoveUp = new System.Windows.Forms.Button();
             this.listImages = new System.Windows.Forms.ImageList(this.components);
             this.btnRename = new System.Windows.Forms.Button();

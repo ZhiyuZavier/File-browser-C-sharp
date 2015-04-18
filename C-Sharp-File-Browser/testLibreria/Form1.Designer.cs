@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.fileBrowser1 = new libreriaUtili.fileBrowser();
+            this.fileBrowser1 = new libreriaUtili.FileBrowser();
             this.SuspendLayout();
             // 
             // fileBrowser1
@@ -53,7 +53,7 @@
 
         #endregion
 
-        private libreriaUtili.fileBrowser fileBrowser1;
+        private libreriaUtili.FileBrowser fileBrowser1;
     }
 }
 

@@ -10,13 +10,31 @@ namespace libreriaUtili
 {
     public class FileBrowserController
     {
-        public fileBrowser theBoundary;
-        public Path thePath;        
+        public FileBrowser theBoundary;
+        public Folder theFolder;        
 
-        public FileBrowserController(fileBrowser newBoundary)
+        public FileBrowserController(FileBrowser newBoundary)
         {
             theBoundary = newBoundary;
-            thePath = new Path();       
+            theFolder = new Folder();       
+        }
+
+        public DirectoryInfo getDirectory(string root)
+        {
+            theFolder.setRoot(root);
+            return theFolder.getDirectory();
+        }
+
+        public DirectoryInfo[] getSubDirectories(string root)
+        {
+            theFolder.setRoot(root);
+            return theFolder.getSubDirectories();
+        }
+
+        public FileInfo[] getFiles(string root)
+        {
+            theFolder.setRoot(root);
+            return theFolder.getFiles();
         }
 
         public void reName(ListView listViewFilesAndFolders)
@@ -32,13 +50,13 @@ namespace libreriaUtili
                     {
                         //if (File.Exists(filename)) File.Move(filename, fi.DirectoryName + @"\" + i.inputText);
                         //else if (Directory.Exists(filename)) Directory.Move(filename, fi.DirectoryName + @"\" + i.inputText);
-                        if (thePath.isFileExisted(filename))
+                        if (theFolder.isFileExisted(filename))
                         {
-                            thePath.moveFile(filename, fi.DirectoryName + @"\" + i.inputText);
+                            theFolder.moveFile(filename, fi.DirectoryName + @"\" + i.inputText);
                         }
-                        else if (thePath.isDirectoryExisted(filename))
+                        else if (theFolder.isDirectoryExisted(filename))
                         {
-                            thePath.moveDirectory(filename, fi.DirectoryName + @"\" + i.inputText);
+                            theFolder.moveDirectory(filename, fi.DirectoryName + @"\" + i.inputText);
                         }
                     }
                     catch (IOException ioe)
@@ -59,13 +77,13 @@ namespace libreriaUtili
                 {
                     //if (File.Exists(filename)) File.Move(filename, folderCol[folderCol.Count - 2] + @"\" + fi.Name);
                     //else if (Directory.Exists(filename)) Directory.Move(filename, folderCol[folderCol.Count - 2] + @"\" + fi.Name);
-                    if (thePath.isFileExisted(filename))
+                    if (theFolder.isFileExisted(filename))
                     {
-                        thePath.moveFile(filename, folderCol[folderCol.Count - 2] + @"\" + fi.Name);
+                        theFolder.moveFile(filename, folderCol[folderCol.Count - 2] + @"\" + fi.Name);
                     }
-                    else if (thePath.isDirectoryExisted(filename))
+                    else if (theFolder.isDirectoryExisted(filename))
                     {
-                        thePath.moveDirectory(filename, folderCol[folderCol.Count - 2] + @"\" + fi.Name);
+                        theFolder.moveDirectory(filename, folderCol[folderCol.Count - 2] + @"\" + fi.Name);
                     }
                 }
                 catch (IOException ioe)

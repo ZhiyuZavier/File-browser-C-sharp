@@ -30,7 +30,7 @@
         {
             this.txt_input = new System.Windows.Forms.TextBox();
             this.btn_ok = new System.Windows.Forms.Button();
-            this.btn_annulla = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_input
@@ -51,22 +51,22 @@
             this.btn_ok.UseVisualStyleBackColor = true;
             this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
             // 
-            // btn_annulla
+            // btnCancel
             // 
-            this.btn_annulla.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_annulla.Location = new System.Drawing.Point(118, 45);
-            this.btn_annulla.Name = "btn_annulla";
-            this.btn_annulla.Size = new System.Drawing.Size(79, 34);
-            this.btn_annulla.TabIndex = 2;
-            this.btn_annulla.Text = "Annulla";
-            this.btn_annulla.UseVisualStyleBackColor = true;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(118, 45);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(79, 34);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // inputDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(215, 91);
-            this.Controls.Add(this.btn_annulla);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.txt_input);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -85,6 +85,6 @@
 
         private System.Windows.Forms.TextBox txt_input;
         private System.Windows.Forms.Button btn_ok;
-        private System.Windows.Forms.Button btn_annulla;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

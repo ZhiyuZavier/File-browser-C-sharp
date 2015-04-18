@@ -10,31 +10,31 @@ namespace libreriaUtili
 {
     public class DragToMoveController
     {
-        public fileBrowser theBoundary;
-        public Path thePath;
+        public FileBrowser theBoundary;
+        public Folder theFolder;
 
-        public DragToMoveController(fileBrowser newBoundary)
+        public DragToMoveController(FileBrowser newBoundary)
         {
             theBoundary = newBoundary;
-            thePath = new Path();       
+            theFolder = new Folder();       
         }        
 
         public DirectoryInfo getDirectory(string root)
         {
-            thePath.setRoot(root);
-            return thePath.getDirectory();
+            theFolder.setRoot(root);
+            return theFolder.getDirectory();
         }
 
         public DirectoryInfo[] getSubDirectories(string root)
         {
-            thePath.setRoot(root);
-            return thePath.getSubDirectories();
+            theFolder.setRoot(root);
+            return theFolder.getSubDirectories();
         }
 
         public FileInfo[] getFiles(string root)
         {
-            thePath.setRoot(root);
-            return thePath.getFiles();
+            theFolder.setRoot(root);
+            return theFolder.getFiles();
         }
 
         // 
