@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace testLibreria
 {
+    // Container of the user control for the test program
     public partial class Form1 : Form
     {
         public Form1()

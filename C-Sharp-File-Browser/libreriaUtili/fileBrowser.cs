@@ -9,6 +9,10 @@ using System.IO;
 
 namespace libreriaUtili
 {
+    // Boundary Class of the cumstom control
+    // When the main file browser view is showing, there are six buttons that user can click on. 
+    // They are ¡°create folder¡±, ¡°delete¡±, ¡°refresh¡±, ¡°rename¡±, ¡°move up¡± and ¡°<<¡±.
+    // And a list of files with their last modified time are shown.
     public partial class FileBrowser : UserControl
     {
         public System.Collections.Specialized.StringCollection folderCol;
@@ -29,27 +33,20 @@ namespace libreriaUtili
             theFileBrowserController = new FileBrowserController(this);
         }
 
+        // Load the fileBrowser user control
         private void fileBrowser_Load(object sender, EventArgs e)
         {
             PaintListView(_ROOT);
             folderCol.Add(_ROOT);
         }
 
+        // Carry the data from the drag source and move to the target.
         private void listViewFilesAndFolders_DragEnter(object sender, DragEventArgs e)
-        {
-            //int len = e.Data.GetFormats().Length - 1;
-            //int i;
-            //for (i = 0; i <= len; i++)
-            //{
-            //    if (e.Data.GetFormats()[i].Equals("System.Windows.Forms.ListView+SelectedListViewItemCollection"))
-            //    {
-            //        //The data from the drag source is moved to the target.	
-            //        e.Effect = DragDropEffects.Move;
-            //    }
-            //}
+        {            
             theDragToMoveController.dragEnter(e);
         }
 
+        // Event handler of click action of the btnBackward
         private void btnBackward_Click(object sender, EventArgs e)
         {
             if (folderCol.Count > 1)
@@ -63,76 +60,19 @@ namespace libreriaUtili
             }
         }
 
+        //Begins a drag-and-drop operation in the ListView control.
         private void listViewFilesAndFolders_ItemDrag(object sender, ItemDragEventArgs e)
-        {
-            //Begins a drag-and-drop operation in the ListView control.
-            //listViewFilesAndFolders.DoDragDrop(listViewFilesAndFolders.SelectedItems, DragDropEffects.Move);
+        {                        
             theDragToMoveController.startDrag(listViewFilesAndFolders);
         }
 
+        // Write codes for the DragDrop event of the target control.
         private void listViewFilesAndFolders_DragDrop(object sender, DragEventArgs e)
-        {
-            ////Return if the items are not selected in the ListView control.
-            //if (listViewFilesAndFolders.SelectedItems.Count == 0)
-            //{
-            //    return;
-            //}
-            ////Returns the location of the mouse pointer in the ListView control.
-            //Point cp = listViewFilesAndFolders.PointToClient(new Point(e.X, e.Y));
-            ////Obtain the item that is located at the specified location of the mouse pointer.
-            //ListViewItem dragToItem = listViewFilesAndFolders.GetItemAt(cp.X, cp.Y);
-            //if (dragToItem == null)
-            //{
-            //    return;
-            //}
-            ////Obtain the index of the item at the mouse pointer.
-            //int dragIndex = dragToItem.Index;
-            //ListViewItem[] sel = new ListViewItem[listViewFilesAndFolders.SelectedItems.Count];
-            //for (int i = 0; i <= listViewFilesAndFolders.SelectedItems.Count - 1; i++)
-            //{
-            //    sel[i] = listViewFilesAndFolders.SelectedItems[i];
-            //}
-            //for (int i = 0; i < sel.GetLength(0); i++)
-            //{
-            //    //Obtain the ListViewItem to be dragged to the target location.
-            //    ListViewItem dragItem = sel[i];
-            //    int itemIndex = dragIndex;
-            //    if (itemIndex == dragItem.Index)
-            //    {
-            //        return;
-            //    }
-            //    if (dragItem.Index < itemIndex)
-            //        itemIndex++;
-            //    else
-            //        itemIndex = dragIndex + i;
-
-            //    //Sposto i files dentro la cartella specificata
-            //    //move the files into the folder specified
-            //    if (Directory.Exists(labelCurrentPath.Text + "\\" + dragToItem.Text))
-            //    {
-            //        if (File.Exists(dragItem.Tag.ToString()))
-            //            File.Move(labelCurrentPath.Text + "\\" + dragItem.Text, labelCurrentPath.Text + "\\" + dragToItem.Text + "\\" + dragItem.Text);
-            //        else if (Directory.Exists(dragItem.Tag.ToString()))
-            //            Directory.Move(labelCurrentPath.Text + "\\" + dragItem.Text, labelCurrentPath.Text + "\\" + dragToItem.Text + "\\" + dragItem.Text);
-            //        listViewFilesAndFolders.Items.Remove(dragItem);
-            //    }
-            //}
+        {            
             theDragToMoveController.startDrop(listViewFilesAndFolders, e, labelCurrentPath);
-        }
+        }        
 
-        //public static string ToByteString(long bytes)
-        //{
-        //    long kilobyte = 1024;
-        //    long megabyte = 1024 * kilobyte;
-        //    long gigabyte = 1024 * megabyte;
-        //    long terabyte = 1024 * gigabyte;
-        //    if (bytes > terabyte) return (bytes / terabyte).ToString("0.00 TB");
-        //    else if (bytes > gigabyte) return (bytes / gigabyte).ToString("0.00 GB");
-        //    else if (bytes > megabyte) return (bytes / megabyte).ToString("0.00 MB");
-        //    else if (bytes > kilobyte) return (bytes / kilobyte).ToString("0.00 KB");
-        //    else return bytes + " Bytes";
-        //}
-
+        // Write codes for the selection event of the file/folder selected
         private void listViewFilesAndFolders_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             string filename = e.Item.Tag.ToString();
@@ -149,6 +89,7 @@ namespace libreriaUtili
             else btnDelete.Enabled = false;
         }
 
+        // Write codes for the activation event of the file/folder selected
         private void listViewFilesAndFolders_ItemActivate(object sender, EventArgs e)
         {
             System.Windows.Forms.ListView lw = (System.Windows.Forms.ListView)sender;
@@ -172,18 +113,17 @@ namespace libreriaUtili
             }
         }
 
+        // Event handler of click action of the btnDelete
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (listViewFilesAndFolders.SelectedItems.Count == 1)
             {
                 string filename = listViewFilesAndFolders.SelectedItems[0].Tag.ToString();
-                //FileInfo fi = new FileInfo(filename);
+                
                 if (DialogResult.Yes == MessageBox.Show("PERMANENTLY delete the selected file?", "Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
                     try
-                    {
-                        //if (File.Exists(filename)) File.Delete(filename);
-                        //else if (Directory.Exists(filename)) Directory.Delete(filename);
+                    {                        
                         if (theDeleteController.isFileExisted(filename))
                         {
                             theDeleteController.deleteFile(filename);
@@ -202,15 +142,15 @@ namespace libreriaUtili
             }
         }
 
+        // Event handler of click action of the btnNewFolder
         private void btnNewFolder_Click(object sender, EventArgs e)
         {
             inputDialog i = new inputDialog("new folder", "");
             if (DialogResult.OK == i.ShowDialog())
             {
-                //Code folder creation
+                //write codes for folder creation
                 try
-                {
-                    //Directory.CreateDirectory(folderCol[folderCol.Count - 1] + @"\" + i.inputText);
+                {                    
                     theCreatFolderController.creatFolder(folderCol[folderCol.Count - 1] + @"\" + i.inputText);
                     PaintListView(folderCol[folderCol.Count - 1]);
                 }
@@ -221,31 +161,14 @@ namespace libreriaUtili
             }
         }
 
+        // Event handler of click action of the btnRename
         private void btnRename_Click(object sender, EventArgs e)
-        {
-            //if (listViewFilesAndFolders.SelectedItems.Count == 1)
-            //{
-            //    string filename = listViewFilesAndFolders.SelectedItems[0].Tag.ToString();
-            //    FileInfo fi = new FileInfo(filename);
-            //    inputDialog i = new inputDialog("Rinomina", fi.Name);
-            //    if (DialogResult.OK == i.ShowDialog())
-            //    {
-            //        try
-            //        {
-            //            if (File.Exists(filename)) File.Move(filename, fi.DirectoryName + @"\" + i.inputText);
-            //            else if (Directory.Exists(filename)) Directory.Move(filename, fi.DirectoryName + @"\" + i.inputText);
-            //            PaintListView(folderCol[folderCol.Count - 1]);
-            //        }
-            //        catch (IOException ioe)
-            //        {
-            //            MessageBox.Show("Errore: " + ioe.Message);
-            //        }
-            //    }
-            //}
+        {            
             theFileBrowserController.reName(listViewFilesAndFolders); 
             PaintListView(folderCol[folderCol.Count - 1]);
         }
 
+        // Reload the whole ListView control for the current directory
         private void PaintListView(string root)
         {
             try
@@ -261,9 +184,7 @@ namespace libreriaUtili
 
                 if (root.CompareTo("") == 0)
                     return;
-                //DirectoryInfo dir = new DirectoryInfo(root);
-                //DirectoryInfo[] dirs = dir.GetDirectories();
-                //FileInfo[] files = dir.GetFiles();
+               
                 DirectoryInfo dir = theCreatFolderController.getDirectory(root);
                 DirectoryInfo[] dirs = theCreatFolderController.getSubDirectories(root);
                 FileInfo[] files = theCreatFolderController.getFiles(root);
@@ -322,28 +243,15 @@ namespace libreriaUtili
             }
         }
 
+        // Event handler of click action of the btnRefresh
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             PaintListView(folderCol[folderCol.Count - 1]);
         }
 
+        // Event handler of click action of the btnMoveUp
         private void btnMoveUp_Click(object sender, EventArgs e)
-        {
-            //if ((listViewFilesAndFolders.SelectedItems.Count == 1) && (folderCol.Count > 1))
-            //{
-            //    string filename = listViewFilesAndFolders.SelectedItems[0].Tag.ToString();
-            //    FileInfo fi = new FileInfo(filename);
-            //    try
-            //    {
-            //        if (File.Exists(filename)) File.Move(filename, folderCol[folderCol.Count - 2] + @"\" + fi.Name);
-            //        else if (Directory.Exists(filename)) Directory.Move(filename, folderCol[folderCol.Count - 2] + @"\" + fi.Name);
-            //        PaintListView(folderCol[folderCol.Count - 1]);
-            //    }
-            //    catch (IOException ioe)
-            //    {
-            //        MessageBox.Show("Error: " + ioe.Message);
-            //    }
-            //}
+        {            
             theFileBrowserController.moveUp(listViewFilesAndFolders, folderCol);
             PaintListView(folderCol[folderCol.Count - 1]);
         }

@@ -8,6 +8,7 @@ using System.Drawing;
 
 namespace libreriaUtili
 {
+    // Controller Class of the use case: Drag and Drop
     public class DragToMoveController
     {
         public FileBrowser theBoundary;
@@ -17,27 +18,30 @@ namespace libreriaUtili
         {
             theBoundary = newBoundary;
             theFolder = new Folder();       
-        }        
+        }
 
+        // Get current directory of a specific path
         public DirectoryInfo getDirectory(string root)
         {
             theFolder.setRoot(root);
             return theFolder.getDirectory();
         }
 
+        // Get all folders inside of a specific directory
         public DirectoryInfo[] getSubDirectories(string root)
         {
             theFolder.setRoot(root);
             return theFolder.getSubDirectories();
         }
 
+        // Get all files inside of a specific directory
         public FileInfo[] getFiles(string root)
         {
             theFolder.setRoot(root);
             return theFolder.getFiles();
         }
 
-        // 
+        // Write code for the DragEnter event handler of the target control that will change the AllowDrop property of the target control to true.
         public void dragEnter(DragEventArgs e)
         {
             int len = e.Data.GetFormats().Length - 1;
@@ -52,13 +56,13 @@ namespace libreriaUtili
             }
         }
 
-        //
+        // Begins a drag-and-drop operation in the ListView control.
         public void startDrag(ListView listViewFilesAndFolders)
-        {
-            //Begins a drag-and-drop operation in the ListView control.
+        {            
             listViewFilesAndFolders.DoDragDrop(listViewFilesAndFolders.SelectedItems, DragDropEffects.Move);
         }
 
+        // Write code for the DragDrop event of the target control.
         public void startDrop(ListView listViewFilesAndFolders, DragEventArgs e, Label labelCurrentPath)
         {
             //Return if the items are not selected in the ListView control.
@@ -94,8 +98,7 @@ namespace libreriaUtili
                     itemIndex++;
                 else
                     itemIndex = dragIndex + i;
-
-                //Sposto i files dentro la cartella specificata
+                
                 //move the files into the folder specified
                 if (Directory.Exists(labelCurrentPath.Text + "\\" + dragToItem.Text))
                 {
@@ -108,6 +111,7 @@ namespace libreriaUtili
             }
         }
 
+        // Get the customized size of a certain file
         public string ToByteString(long bytes)
         {
             long kilobyte = 1024;

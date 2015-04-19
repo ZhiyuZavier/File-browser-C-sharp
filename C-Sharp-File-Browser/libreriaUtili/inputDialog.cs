@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace libreriaUtili
 {
+    // Helper class for the input dialog panel 
     public partial class inputDialog : Form
     {
         public string inputText = "";
@@ -19,6 +20,7 @@ namespace libreriaUtili
             this.txt_input.Text = testoIniziale;
         }
 
+        // Event handler of click action for btn_ok
         private void btn_ok_Click(object sender, EventArgs e)
         {
             inputText = this.txt_input.Text;
